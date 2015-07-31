@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!-- CSS goes in the document HEAD or added to your external stylesheet -->
+<style type="text/css">
+    table.gridtable {
+        font-family: verdana,arial,sans-serif;
+        font-size:11px;
+        color:#333333;
+        border-width: 1px;
+        border-color: #666666;
+        border-collapse: collapse;
+    }
+    table.gridtable th {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #666666;
+        background-color: #dedede;
+    }
+    table.gridtable td {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #666666;
+        background-color: #ffffff;
+    }
+</style>
+
+
+<input accept="application/vnd.sealed-xls" type="file" ng-model="object.file" onchange="angular.element(this).scope().onFileSelect(this)"/>
+
+<table class="gridtable" align="center">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Path</th>
+    </tr>
+    <tr ng-repeat="file in files">
+<td ui-sref="excel({id: {{file.id}}})"><a href="">{{$index}}</a></td>
+<td>{{file.name}}</td>
+<td>{{file.path}}</td>
+    </tr>
+</table>
+
+</body>
+</html>

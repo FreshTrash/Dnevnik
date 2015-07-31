@@ -1,0 +1,56 @@
+<!doctype html>
+<html class="no-js" ng-app="acomApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- dependency styles -->
+    <link rel="stylesheet" href="app/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="app/lib/angular-ui-tree.min.css">
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Page wrapper -->
+        <section id="main-wrapper" class="theme-default">
+            <div ui-view="header"></div>
+            <div ui-view="content"></div>
+        </section>
+    </div>
+    <div class="allert_message_wrapper">
+        <div class="allert_message"></div>
+    </div>
+
+    <!-- dependency scripts -->
+    <script src="app/lib/jquery.min.js"></script>
+    <script src="app/lib/bootstrap.min.js"></script>
+
+    <script src="app/lib/angular.min.js"></script>
+    <script src="app/lib/quick-ng-repeat.js"></script>
+    <script src="app/lib/angular-ui-router.min.js"></script>
+    <script src="app/lib/angular-ui-tree.js"></script>
+    <script src="app/lib/ui-bootstrap.min.js"></script>
+    <script src="app/lib/ui-bootstrap-tpls.min.js"></script>
+
+    <script src="app/lib/angular-resource.min.js"></script>
+    <script src="app/lib/angular-route.min.js"></script>
+
+
+    <!-- selectize -->
+    <script src="app/lib/selectize.js"></script>
+    <link rel="stylesheet" href="app/lib/selectize.bootstrap3.css">
+
+
+    <!-- our scripts -->
+    <script src="app/index.js"></script>
+    <script src="app/scripts/controllers/MainController.js"></script>
+    <script src="app/scripts/controllers/ExcelController.js"></script>
+    <script src="app/scripts/route/mainRoute.js"></script>
+    <script src="app/scripts/services/MainService.js"></script>
+
+
+
+    <!--admin-->
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!-- CSS goes in the document HEAD or added to your external stylesheet -->
+<style type="text/css">
+    table.gridtable {
+        align: center;
+        font-family: verdana, arial, sans-serif;
+        font-size: 11px;
+        color: #333333;
+        border-width: 1px;
+        border-color: #666666;
+        border-collapse: collapse;
+    }
+
+    table.gridtable th {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #666666;
+        background-color: #dedede;
+    }
+
+    table.gridtable td {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #666666;
+        background-color: #ffffff;
+    }
+
+    .right-block {
+        position: absolute;
+        left: 0px;
+        width: 300px;
+        background-color: #b0e0e6;
+    }
+</style>
+
+<a href=""><div class="right-block" ui-sref="index" style="font-size: 30px;"><center>Назад</center></div></a>
+<center style="font-size: medium">{{rows[0].excel.name}}</center>
+<table class="gridtable"  align="center">
+    <tr>
+        <th>Key</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Date</th>
+    </tr>
+    <tr ng-repeat="row in rows">
+        <td>{{row.key}}</td>
+        <td>{{row.title}}</td>
+        <td>{{row.price | limitTo:limit}}</td>
+        <td>{{row.date | date:'dd-MM-yyyy'}}</td>
+    </tr>
+</table>
+
+</body>
+</html>
