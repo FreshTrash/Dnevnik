@@ -50,6 +50,7 @@ public class ParseService {
             if(row != null) {
                 for(int j=0; j<row.getPhysicalNumberOfCells(); j++) {
                     cell = row.getCell(j);
+
                     switch(j) {
                         case 0:
                             r.setKey((int) cell.getNumericCellValue());

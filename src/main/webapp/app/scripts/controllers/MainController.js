@@ -21,6 +21,6 @@ angular.module('acomApp')
                 MainService.getFiles().then(function (data) {
                     $scope.files = data;
                 });
-            }, 1000);
+            }, 2000);
         };
     });

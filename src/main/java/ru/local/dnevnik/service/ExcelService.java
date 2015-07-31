@@ -45,6 +45,7 @@ public class ExcelService {
         excel.setName(file.getOriginalFilename());
         excel.setPath(fileDir+file.getOriginalFilename());
         excel = excelDAO.save(excel);
+        System.out.println(excel);
         parseService.parse(excel);
 
         return excel;

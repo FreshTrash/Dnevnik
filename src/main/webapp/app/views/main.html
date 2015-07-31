@@ -32,7 +32,8 @@
 </style>
 
 
-<input accept="application/vnd.sealed-xls" type="file" ng-model="object.file" onchange="angular.element(this).scope().onFileSelect(this)"/>
+<input type="file"  accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+       ng-model="object.file" onchange="angular.element(this).scope().onFileSelect(this)"/>
 
 <table class="gridtable" align="center">
     <tr>

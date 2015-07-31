@@ -40,8 +40,7 @@ public class MainController {
     @ResponseBody
     public ResponseEntity handleFileUpload(@RequestParam("file") MultipartFile file) throws Exception {
 
-      Excel excel =  excelService.processFile(file);
-        System.out.println(excel);
+        Excel excel =  excelService.processFile(file);
         return new ResponseEntity("Файл успешно загружен.", HttpStatus.OK);
     }
 }
