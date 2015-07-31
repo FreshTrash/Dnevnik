@@ -28,3 +28,5 @@ war
 
 cp build/dnevnik.war /path/to/tomcat8/webapp
 
+
+Файл для примера: price.xls
