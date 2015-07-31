@@ -7,7 +7,6 @@ angular.module('acomApp')
         $scope.rows = [];
 
         MainService.getFile($stateParams.id).then(function (data) {
-            console.log(data);
             $scope.rows = data;
         });
     });
