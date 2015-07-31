@@ -34,7 +34,7 @@ public class ExcelService {
     public Excel processFile(MultipartFile file) throws IOException, BadFileException, ParseException {
         if (!file.isEmpty()) {
             byte[] bytes = file.getBytes();
-            BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File(fileDir+file.getOriginalFilename())));
+            BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File(fileDir + file.getOriginalFilename())));
             stream.write(bytes);
             stream.close();
         } else {
@@ -43,10 +43,15 @@ public class ExcelService {
 
         Excel excel = new Excel();
         excel.setName(file.getOriginalFilename());
-        excel.setPath(fileDir+file.getOriginalFilename());
+        excel.setPath(fileDir + file.getOriginalFilename());
         excel = excelDAO.save(excel);
-        System.out.println(excel);
-        parseService.parse(excel);
+
+        try {
+            parseService.parse(excel);
+        } catch (Exception e) {
+            throw new ParseException("Не корректные данные в файле!\n Не должно быть пустых ячеек.\n Порядок данных [Целое, Строка, Дробное, Дата]", 1);
+        }
+
 
         return excel;
     }

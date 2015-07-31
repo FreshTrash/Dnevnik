@@ -1,12 +1,11 @@
 package ru.local.dnevnik.service;
 
-import org.apache.poi.hssf.usermodel.HSSFCell;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.ss.usermodel.Cell;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import ru.local.dnevnik.exception.BadFileException;
 import ru.local.dnevnik.model.Excel;
 
 import javax.transaction.Transactional;
@@ -25,7 +24,7 @@ public class ParseService {
     private RowService rowService;
 
     @Transactional
-    public  String parse(Excel excel) throws ParseException {
+    public  String parse(Excel excel) throws ParseException, BadFileException {
 
         String result = "";
         InputStream in = null;

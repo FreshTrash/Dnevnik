@@ -31,6 +31,7 @@ angular.module('acomApp')
                     })
                     .error(function(data){
                         console.log(data);
+                        alert(data.originalException.message);
                     });
             }
         }

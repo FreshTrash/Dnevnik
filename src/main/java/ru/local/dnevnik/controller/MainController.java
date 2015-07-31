@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import ru.local.dnevnik.exception.BadFileException;
 import ru.local.dnevnik.service.RowService;
 import ru.local.dnevnik.model.Excel;
 import ru.local.dnevnik.service.ExcelService;
@@ -40,7 +41,11 @@ public class MainController {
     @ResponseBody
     public ResponseEntity handleFileUpload(@RequestParam("file") MultipartFile file) throws Exception {
 
-        Excel excel =  excelService.processFile(file);
+        try {
+            excelService.processFile(file);
+        }catch(Exception e) {
+            return new ResponseEntity(e, HttpStatus.BAD_REQUEST);
+        }
         return new ResponseEntity("Файл успешно загружен.", HttpStatus.OK);
     }
 }

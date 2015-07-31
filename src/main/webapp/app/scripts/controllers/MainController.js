@@ -11,7 +11,6 @@ angular.module('acomApp')
         });
 
         $scope.onFileSelect = function (files) {
-            console.log(files.files);
             var formData = new FormData();
             formData.append("file", files.files[0]);
 
